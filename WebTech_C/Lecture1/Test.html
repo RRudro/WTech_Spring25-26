@@ -5,17 +5,38 @@
     <title>Test Page</title>
 </head>
 <body>
+
+    <div class="topnav">
+        <div>
+            <header>Login Form</header>
+            <a href="https://www.aiub.edu/" target="_blank">AIUB Website</a> |
+            <a href="https://portal.aiub.edu/">AIUB Portal</a>
+        </div>
+
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Test.html">Test</a>
+        </nav>
+    </div>
+
     <h1>Welcome to the Test Page</h1>
     <p>This is a simple HTML page for testing purposes.</p>
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Enter your name">
-        <br><br>
-        <h1>Password</h1>
-        <input type="password" name="password" placeholder="Enter your password">
-        <br><br>
-        <input type="submit" value="Submit">
 
+    <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your name">
+
+        <br><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <br><br>
+
+        <input type="submit" id ="submit" value="Login">
     </form>
+
 </body>
 </html>
