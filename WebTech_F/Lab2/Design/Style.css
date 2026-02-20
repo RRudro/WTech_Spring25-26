@@ -1,0 +1,61 @@
+/* Style the Page */
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:cyan;
+    margin: 20px;
+    padding: 20px;
+}
+h1{
+    color: blue;
+    text-align: center;
+    margin-top: 50px;
+}
+/* Form Design*/
+form{
+    align-content: center;
+    max-width: fit-content;
+    margin:0 auto;
+    padding: 20px;
+    background-color:cornsilk;
+    border-radius: 8px;
+}
+label{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+/*group selector*/
+input[type="text"], input[type="number"],input[type="date"],input[type="file"], select, textarea{
+    width: 500px;
+    margin-top: 1px;
+    border: 1px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+input[type="submit"]:hover{
+    background-color: brown;
+}
+input[type="radio"]{
+    margin-right: 10px;
+}
+textarea{
+    resize: vertical;
+    width: 0 auto;
+}
+#Name{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    font-display: auto;
+}
+#Age{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    font-display: auto;
+}
+#DOB {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#Address{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
