@@ -16,11 +16,17 @@
         <script src="D:\AIUB\Spring 25-26\WebTechnology\WTech_Spring25-26\WebTech_F\Lab4\Javascript\Script.js"> </script>
         <h1> Patient Registration (Adnmission) </h1>
     </head>
-
+<!-- onsubmit="return collect_data()" -->
     <form>
+        <!-- <table> 
+            <tr><label for ="Name">Patient Name: </label></tr>
+            <td><input type ="text" id="PatientName" name ="Name" placeholder = "Enter the Name"  onclick="return collect_data()"> <br><br></td>
+            <p id ="NameError"> </p>
+        </table> -->
+
         <table> 
             <tr><label for ="Name">Patient Name: </label></tr>
-            <td><input type ="text" id="PatientName" name ="Name" placeholder = "Enter the Name"> <br><br></td>
+            <td><input type ="text" id="PatientName" name ="Name" placeholder = "Enter the Name"  onchange="return collect_data()"> <br><br></td>
             <p id ="NameError"> </p>
         </table>
 
@@ -44,7 +50,7 @@
         <br><br>
 
         <label for="Address">Address:</label>
-        <textarea id="Address" name ="PatientAddress" rows="4" cols="30" placeholder="Enter The Address"></textarea>
+        <textarea id="Address" name ="PatientAddress" rows="4" cols="30" placeholder="Enter The Address" onkeyup="return  get_textarea()" ></textarea>
 
         <br><br>
 
@@ -63,8 +69,9 @@
 
         <br><br>
 
-        <label for="Submit">Submit Info: </label>
-        <input type="submit" id="submit" name="DataSubmit">
+        <!-- <label for="Submit">Submit Info: </label>
+        <input type="submit" id="submit" name="DataSubmit"> -->
+        <button id ="keysubmit" onclick="return submit_key()"> Data Submit </button>
         
 
     </form>
