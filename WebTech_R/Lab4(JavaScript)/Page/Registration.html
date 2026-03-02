@@ -17,14 +17,15 @@
     <h1> Patient Registration Form (Admission) </h1>
 </head>
 
-<form  onsubmit="return collect_data()">
+<!-- onsubmit="return collect_data()" -->
+<form>
 
 <label for ="PatientName">Patient Name: </label>
-<input type="text" id = "PatientName" name = "PatientName" placeholder="Enter The Name">
+<input type="text" id = "PatientName" name = "PatientName" placeholder="Enter The Name" onchange="return get_name()">
 <br><br>
 
 <label for = "Age">Patient Age: </label>
-<input type="number" id ="Age" name = "Age">
+<input type="number" id ="Age" name = "Age" onchange="return get_age()">
 <br><br>
 
 <label for ="DOB"> Date of Birth: </label>
@@ -41,7 +42,7 @@
 
 <br><br>
 <label for="Address">Patient Address: </label>
-<textarea id ="Address" name ="PatientAddress" rows="4" cols="20" placeholder="Enter The Address"></textarea>
+<textarea id ="Address" name ="PatientAddress" rows="4" cols="20" placeholder="Enter The Address"  onkeyup="return get_textarea()"></textarea>
 
 <br><br>
 
@@ -58,9 +59,11 @@
 </select>
 <br><br>
 
-<input type="submit" id ="submit" name ="submit" value="LogIn ">
+<!-- <input type="submit" id ="submit" name ="submit" value="LogIn ">
 
-<input type="button" id ="reset" name ="reset" value ="Reset ">
+<input type="button" id ="reset" name ="reset" value ="Reset "> -->
+
+<button id = "submitdata" onclick = "return collect_data ()"> Data Submit </button>
 
 </form>
 </body>
