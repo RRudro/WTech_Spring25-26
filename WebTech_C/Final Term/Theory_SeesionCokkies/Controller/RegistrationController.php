@@ -1,37 +1,29 @@
 <?php
+session_start();
 
 $name = "";
-$password = "";
-$validpassword="";
+$password ="";
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $name = $_POST["name"];
-        $password =$_POST["password"];
-
-        $name = $_REQUEST["name"];
-        $password =$_REQUEST["password"];
-
-        if(!empty($name) && strlen($name)>=5)
+        $password = $_POST["password"];
+        
+        if(!empty($name) && strlen($name)>=5 && strlen($password)>=4)
             {
-                echo "User Name: " . $name;
+                $_SESSION["name"]=$name;
+                setcookie('name',$name, time()+3600, "/");
+                echo "log in Successfull!";
             }
-            else{
-                echo "User Name Must Be greater than 5 Char";
-            }
-        if(strlen($password)>=4)
-            {
-               $validpassword = $password;
-                echo "Password: " .$validpassword;
-            }
-            else{
-                     
-                $validpassword ="Please enter the password must contain 4 char minimum";
-              
-            }
-
-
+        else{
+            echo "please ensure the session cokkiess";
+        }
     }
-
-
+    if(isset($_SESSION['name']) || isset($_COOKIE['name']))
+        {
+            echo "Welcome Back";
+        }
+        else{
+            echo "log in Again";
+        }
 ?>
