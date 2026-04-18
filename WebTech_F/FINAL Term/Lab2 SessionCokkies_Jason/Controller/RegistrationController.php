@@ -40,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $data = file_get_contents($dataFile);
         $mydata = json_decode($data, true);
-    } else {
+    }
+    else {
         echo "Please enter a valid name (at least 5 characters) and password (at least 4 characters).<br>";
     }
 
