@@ -1,11 +1,10 @@
 <?php
+include "../Model/db.php";
 session_start();
 
 $name = "";
 $password="";
 $datafile ="../data.json";
-
-
 
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
@@ -14,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $password= $_POST["password"];
 
         if(!empty($name) && strlen($name)>=5 && strlen($password)>=4)
-            {
+            {                
                 echo "Log In Successfull";
                 setcookie("UserName",$name,time()+3600, "/");
 
@@ -44,9 +43,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                     }
             $data = file_get_contents($datafile);
             $mydata = json_decode($data,true);
-            
-            
-
+            $database = new db();
+            $connection = $database->connection();
+            $result = $database->signin($connection,"users",$name, $password);
+            if($result)
+                {
+                    Header("Location: ../View/Dashboard.php");
+                }
             }
             else{
                 echo "Please Use the appropiate validation";

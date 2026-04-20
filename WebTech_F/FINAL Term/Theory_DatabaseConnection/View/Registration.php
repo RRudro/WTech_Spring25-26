@@ -1,5 +1,6 @@
 <?php
 include "../Controller/RegistrationController.php";
+echo "<h1>Registation Page </h1> <br>"
 ?>
 <!DOCTYPE html>
 <html>
