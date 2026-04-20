@@ -4,6 +4,8 @@ session_start();
 
 $name ="";
 $password="";
+$datafile ="../data.json";
+
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
     {
@@ -15,6 +17,33 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 $_SESSION["name"] = $name;
                 setcookie('name', $name, time()+3600, "/");
                 echo "Login Successful";
+
+                $formdata = array("Name"=>$name, "Password"=>$password);
+
+                if(file_exists($datafile))
+                    {
+                        $existdata = file_get_contents($datafile);
+                        $tempdata = json_decode($existdata, true);
+                    }
+                    else{
+                        $tempdata = array();
+                    }
+
+                    if(!is_array($tempdata))
+                        {
+                            $tempdata = array(); 
+                        }
+                    $tempdata [] = $formdata;
+                    $jsondata = json_encode($tempdata, JSON_PRETTY_PRINT);
+                if(file_put_contents($datafile,$jsondata)!== false)
+                    {
+                        echo "Data Saved";
+                    }
+                    else{
+                        echo "Please Try Again";
+                    }
+                $data = file_get_contents($datafile);
+                $mydata = json_decode($data);
             }
             else{
                 echo "Please try again!";
