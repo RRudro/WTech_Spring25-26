@@ -48,13 +48,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             else{
                 echo "Please try again!";
             }
-    }
-if(isset($_SESSION["name"]) || isset($_COOKIE["name"]))
-    {
-        echo "Welcome Back";
-    }
-    else{
+
+        if(isset($_SESSION["name"]) || isset($_COOKIE["name"]))
+            {
+                echo "Welcome Back";
+            }
+        else{
         echo "pLease log in agian!"; 
+            }
     }
+
 
 ?>

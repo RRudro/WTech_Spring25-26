@@ -41,15 +41,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                     else{
                         echo "No Data Saved";
                     }
-            $data = file_get_contents($datafile);
-            $mydata = json_decode($data,true);
             $database = new db();
             $connection = $database->connection();
-            $result = $database->signin($connection,"users",$name, $password);
+            $result = $database->signin($connection,"users", $name, $password);
             if($result)
                 {
-                    Header("Location: ../View/Dashboard.php");
+                    Header("Location:../View/Dashboard.php ");
                 }
+
+       
             }
             else{
                 echo "Please Use the appropiate validation";
@@ -63,6 +63,4 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             echo "Please log In";
         }
     }
-
-
 ?>
