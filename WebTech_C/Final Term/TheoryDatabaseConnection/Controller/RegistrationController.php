@@ -1,4 +1,5 @@
 <?php
+include "../Model/db.php";
 session_start();
 
 $name = "";
@@ -44,6 +45,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 $data = file_get_contents($datafile);
                 $mydata = json_decode($data, true);
 
+                $database = new db();
+                $connection = $database->connection();
+                $result = $database->signup($connection, "users", $name, $password);
+                if($result)
+                    {
+                        Header("Location: ../View/Login.php");
+                    }
 
             }
         else{

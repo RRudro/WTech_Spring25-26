@@ -4,6 +4,7 @@ include "../Controller/RegistrationController.php";
 <!DOCTYPE html>
 <html>
     <body>
+        <h1> Resgistration Page </h1>
         <form method = "post" action="">
             <table>
                 <tr>
