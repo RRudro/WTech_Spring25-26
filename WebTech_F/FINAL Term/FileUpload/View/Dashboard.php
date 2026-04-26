@@ -1,5 +1,6 @@
 <?php
-
+?>
+<!DOCTYPE html>
 <html>
     <body>
          <?php echo "Hello Mr. $username , welcome to dashboard.";?>

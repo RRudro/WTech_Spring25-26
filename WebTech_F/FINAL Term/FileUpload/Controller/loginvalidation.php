@@ -45,25 +45,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $connection = $database->connection();
             $result = $database->signin($connection,"users", $name, $password);
             
-            if($result->num_rows==1)
+            if($result)
                 {
-                    while($row=$result->fetch_assoc())
-                        {
-                            $id=$row["id"];
-                            $username=$row["username"];
-                            $filepath=$row["filepath"];
-                            $_SESSION["username"]=$username;
-                            $_SESSION["filepath"]=$filepath;
-                            $_SESSION["id"]=$id;
-                            $_SESSION["loggedIn"]=true;
+                
                             Header("Location:../View/Dashboard.php ");
-                        }
-                    
                 }
-            }
             else{
                 echo "Please Use the appropiate validation";
             }
+        }
 
     if(!isset($_SESSION["UserName"]) || isset($_COOKIE["UserName"]))
         {
