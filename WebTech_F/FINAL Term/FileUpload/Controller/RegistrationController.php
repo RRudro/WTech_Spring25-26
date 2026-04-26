@@ -13,6 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $name = $_POST["name"];
         $password= $_POST["password"];
+        $file=$_FILES["file"];
         
 
         if(!empty($name) && strlen($name)>=5 && strlen($password)>=4)
@@ -48,10 +49,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $mydata = json_decode($data,true);
             
             
+            if($file)
+                {
+                    $targetdirectory= "../File/";
+                    $path = $targetdirectory.basename($file["name"]);
+                    $result = move_uploaded_file($file["temp_file"],$path);
+                }
+            
 
             $database = new db();
             $connection = $database->connection();
-            $result = $database->signup($connection,"users", $name, $password);
+            $result = $database->signup($connection,"users", $name, $password, $path);
             if($result)
                 {
                     Header("Location:../View/Login.php ");

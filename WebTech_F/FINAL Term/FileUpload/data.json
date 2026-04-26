@@ -62,5 +62,21 @@
     {
         "name": "Rudro12",
         "password": "1234567890"
+    },
+    {
+        "name": "Bangladesh12",
+        "password": "1234567"
+    },
+    {
+        "name": "Bangladesh",
+        "password": "123456"
+    },
+    {
+        "name": "Rudro123",
+        "password": "12345"
+    },
+    {
+        "name": "Rudro1223",
+        "password": "2111"
     }
 ]
