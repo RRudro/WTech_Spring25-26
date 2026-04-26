@@ -47,8 +47,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             
             if($result)
                 {
-                
-                            Header("Location:../View/Dashboard.php ");
+                    $_SESSION["loggedIn"] = true;
+                    $_SESSION["UserName"] = $name;
+                    $row = $result->fetch_assoc();
+                    if($row && isset($row["filepath"])){
+                        $_SESSION["filepath"] = $row["filepath"];
+                    }
+                    Header("Location:../View/Dashboard.php ");
                 }
             else{
                 echo "Please Use the appropiate validation";

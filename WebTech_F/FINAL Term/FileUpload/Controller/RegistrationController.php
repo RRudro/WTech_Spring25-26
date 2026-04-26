@@ -53,7 +53,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 {
                     $targetdirectory= "../File/";
                     $path = $targetdirectory.basename($file["name"]);
-                    $result = move_uploaded_file($file["temp_file"],$path);
+                    $result = move_uploaded_file($file["tmp_name"],$path);
+                }
+                else{
+                    $path = "";
                 }
             
 
