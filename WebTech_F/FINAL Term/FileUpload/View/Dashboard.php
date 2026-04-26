@@ -1,15 +1,4 @@
 <?php
-session_start();
-$username = $_SESSION["username"] ?? "";
-$isLoggedIn = $_SESSION["loggedIn"];
- 
-$filepath = $_SESSION["filepath"] ??"";
- 
-if(!$isLoggedIn){
-    Header("Location: Login.php");
-    exit();
-}
-?>
 
 <html>
     <body>

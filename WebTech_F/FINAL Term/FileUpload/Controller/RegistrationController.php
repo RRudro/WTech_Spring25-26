@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $name = $_POST["name"];
         $password= $_POST["password"];
-        $file = $_FILES["file"];
+        
 
         if(!empty($name) && strlen($name)>=5 && strlen($password)>=4)
             {                
@@ -47,13 +47,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $data = file_get_contents($datafile);
             $mydata = json_decode($data,true);
             
-            $path ="";
-            if($file)
-                {
-                    $targetDirectory = "../File/";
-                    $path= $targetDirectory.basename($file["name"]);
-                    $result=move_uploaded_file($file["tmp_name"],$path);
-                }
+            
 
             $database = new db();
             $connection = $database->connection();
