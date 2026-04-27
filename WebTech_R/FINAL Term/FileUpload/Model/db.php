@@ -16,9 +16,9 @@ if($connection->connect_error)
 return $connection;
 }
 
-function signup($connection, $tablename, $username, $password, $filepath)
+function signup($connection, $tablename, $username, $password)
 {
-    $sql= "INSERT INTO " .$tablename. "(username, password, filepath) VALUES ('".$username."', '".$password."','".$filepath."')";
+    $sql= "INSERT INTO " .$tablename. "(username, password, filepath) VALUES ('".$username."', '".$password."')";
     $result = $connection->query($sql);
     return $result;
 }

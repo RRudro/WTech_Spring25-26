@@ -15,10 +15,7 @@ echo "<h1>Registation Page </h1> <br>"
                     <td> <label for ="password">Password:  </label></td>
                     <td> <input type ="password" id ="pass" name ="password"> <?php echo $password ?></td>
                 </tr>
-                <tr>
-                    <td> File Upload </td>
-                    <td> <input type="file" name ="file"></td>
-                </tr>
+                
                 
                 <tr>
                     <td> <input type ="submit" id="submitbutton" name = "submit"> </td>
