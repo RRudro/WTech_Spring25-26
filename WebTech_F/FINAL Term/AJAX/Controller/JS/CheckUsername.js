@@ -7,14 +7,10 @@ function CheckUser(){
             document.getElementById("usernameresponse").innerHTML=this.responseText;
         }
         else{
-             document.getElementById("usernameresponse").innerHTML=this.status;
+           document.getElementById("usernameresponse").innerHTML=this.status; 
         }
-
-        xhttp.open("POST","../CheckUser.php", true);
-        xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        xhttp.send("username="+username);
-
-
-
     }
+    xhttp.open("POST","../Controller/CheckUser.php", true);
+    xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    xhttp.send("username="+username);
 }
