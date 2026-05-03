@@ -10,8 +10,8 @@ echo "<h1>Registation Page </h1> <br>"
             <table>
                 <tr>
                     <td> <label for ="Username">User Name: </label></td>
-                    <td> <input type ="text" id="name" name="name" onkeyup=CheckUsername()> <?php echo $name ?> </td>
-                    <td> <p id="usernameresponse"></p></td>
+                    <td> <input type ="text" id="name" name="name" onkeyup=CheckUser()> <?php echo $name ?> </td>
+                    <td> <p id ="usernameresponse"> </p></td>
                 </tr>
                 <tr>
                     <td> <label for ="password">Password:  </label></td>

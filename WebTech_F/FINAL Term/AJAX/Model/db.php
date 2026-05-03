@@ -33,8 +33,7 @@ function CheckUsername($connection, $tablename, $username)
     $sql = "SELECT * FROM ".$tablename." WHERE username='".$username."'";
     $result = $connection->query($sql);
     return $result;
-}
-	
+}	
 
 
 
