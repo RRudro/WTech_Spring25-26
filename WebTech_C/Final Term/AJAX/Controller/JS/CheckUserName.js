@@ -12,7 +12,7 @@ function CheckUserName()
         }
     }
     xhttp.open("POST", "../Controller/CheckUsername.php", true);  
-    xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
     xhttp.send("username="+username);
 
 }
