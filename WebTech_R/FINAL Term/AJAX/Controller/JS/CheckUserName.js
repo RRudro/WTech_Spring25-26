@@ -9,10 +9,9 @@ function CheckUserName()
         }
         else{
             document.getElementById("userresponse").innerHTML=this.status;
-        }
-
-        xhttp.open("POST", "../Controller/CheckUserName.php", true);
-        xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        xhttp.send("username="+username);
+        }  
     }
+        xhttp.open("POST", "../Controller/CheckUserName.php", true);
+        xhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xhttp.send("username="+username);
 }
