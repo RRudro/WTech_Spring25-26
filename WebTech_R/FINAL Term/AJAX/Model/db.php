@@ -5,7 +5,7 @@ function connection()
 $db_host = "localhost";
 $db_user= "root";
 $db_password="";
-$db_name="section_f";
+$db_name="section_r";
 
 $connection=  new mysqli($db_host, $db_user,$db_password,$db_name);
 if($connection->connect_error)
@@ -28,6 +28,12 @@ function signin($connection, $tablename, $username, $password)
     return $result;
 }
 
+function CheckUser($connection, $tablename, $username)
+{
+    $sql = "SELECT * FROM ".$tablename." WHERE username='".$username."'";
+    $result = $connection->query($sql);
+    return $result;
+}
 
 
 
