@@ -4,7 +4,7 @@ echo "<h1>Registation Page </h1> <br>"
 ?>
 <!DOCTYPE html>
 <html>
-    <head> <script src = "../Controller/JS/CheckUser.js"> </script></head>
+    <head> <Script src = "../Controller/JS/CheckUserName.js"> </Script></head>
     <body>
         <form method = "post" action="../Controller/RegistrationController.php" enctype="multipart/form-data">
             <table>

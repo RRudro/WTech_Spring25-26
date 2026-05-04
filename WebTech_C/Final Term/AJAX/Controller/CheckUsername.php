@@ -1,6 +1,6 @@
 <?php
 include "../Model/db.php";
-$username= $_POST["username"] ??"";
+$username= $_POST["username"] ?? " ";
 if(!$username)
     {
         echo "Username Required!";
