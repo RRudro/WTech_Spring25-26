@@ -36,6 +36,15 @@ function CheckUserName($connection, $tablename, $username)
     return $result;
 }
 
+function WithSQLInjection($connection, $tablename, $username, $password, $filepath)
+{
+    $sql= "INSERT INTO " .$tablename. "(username, password, filepath) VALUES (?,?,?)";
+    $statement=$connection->prepare($sql);
+    $statement->bind_param("sss",$username, $password,$filepath);
+    $result = $statement->execute();
+    return $result;
+}
+
 
 
 }
